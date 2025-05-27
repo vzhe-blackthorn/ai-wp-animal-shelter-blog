@@ -10,3 +10,100 @@ body {
     margin: 0;
     padding: 0;
 }
+
+/* Header navigation styles */
+.site-header {
+    background: #f5f5f5;
+}
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+.site-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+.site-navigation a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Hero banner */
+.hero {
+    background: #e8f2ff;
+    text-align: center;
+    padding: 4rem 1rem;
+}
+.hero h2 {
+    margin: 0 0 1rem;
+    font-size: 2.5rem;
+}
+.hero p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+/* Offerings cards */
+.offerings {
+    padding: 2rem 1rem;
+    background: #fff;
+}
+.offerings .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.offerings .card {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Gallery slider */
+.gallery {
+    padding: 2rem 1rem;
+    background: #e8e8e8;
+}
+.swiper-container img {
+    width: 100%;
+    display: block;
+}
+
+/* Contact section */
+.contact-section {
+    padding: 2rem 1rem;
+}
+.contact-form {
+    display: grid;
+    gap: 0.5rem;
+    max-width: 400px;
+    margin-bottom: 1rem;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+@media (max-width: 600px) {
+    .site-navigation ul {
+        flex-direction: column;
+    }
+    .hero h2 {
+        font-size: 2rem;
+    }
+}
