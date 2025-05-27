@@ -6,7 +6,187 @@ Description: Starter theme for Animal Shelter Blog
 Version: 1.0
 */
 
+:root {
+    --bg: #FFF9F4;
+    --primary: #FB8500;
+    --secondary: #383838;
+}
+
 body {
     margin: 0;
     padding: 0;
+    background: var(--bg);
+    color: var(--secondary);
+    font-family: Arial, sans-serif;
+}
+
+/* Header navigation styles */
+.site-header {
+    background: #fff;
+    position: relative;
+}
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+.site-title a {
+    background: var(--bg);
+    padding: 0.25rem 0.5rem;
+    color: var(--secondary);
+    text-decoration: none;
+}
+.burger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--secondary);
+    margin: 4px 0;
+}
+.site-navigation {
+    position: static;
+}
+.site-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+.site-navigation a {
+    text-decoration: none;
+    color: var(--secondary);
+}
+
+/* Hero banner */
+.hero {
+    background: var(--primary);
+    color: #fff;
+    text-align: center;
+    padding: 4rem 1rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+.hero h2 {
+    margin: 0 0 1rem;
+    font-size: 2.5rem;
+}
+.hero p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+/* Offerings cards */
+.offerings {
+    padding: 2rem 1rem;
+    background: #fff;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+.offerings .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.offerings .card {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Gallery slider */
+.gallery {
+    padding: 2rem 1rem;
+    background: var(--bg);
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+.swiper img {
+    width: 100%;
+    display: block;
+    height: auto;
+    object-fit: cover;
+    max-height: 400px;
+}
+
+/* Contact section */
+.contact-section {
+    padding: 2rem 1rem;
+    background: #fff;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+.contact-form {
+    display: grid;
+    gap: 0.5rem;
+    max-width: 400px;
+    margin-bottom: 1rem;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+/* Footer */
+.site-footer {
+    background: var(--secondary);
+    color: var(--bg);
+    text-align: center;
+    padding: 1rem;
+}
+.footer-navigation ul {
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.footer-navigation a {
+    color: var(--bg);
+    text-decoration: none;
+}
+.footer-social a {
+    color: var(--primary);
+    margin: 0 0.25rem;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+    .site-navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        display: none;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .site-navigation ul {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+    .site-navigation.open {
+        display: block;
+    }
+    .hero h2 {
+        font-size: 2rem;
+    }
+    .swiper img {
+        max-height: 200px;
+    }
 }
