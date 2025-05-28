@@ -6,6 +6,21 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<header>
-    <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+<header class="site-header">
+    <div class="container">
+        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="primary-menu" class="site-navigation" role="navigation">
+            <?php
+            wp_nav_menu( array(
+                'theme_location' => 'primary',
+                'fallback_cb'    => 'ai_shelter_fallback_menu',
+            ) );
+            ?>
+        </nav>
+    </div>
 </header>
