@@ -8,7 +8,7 @@
 <body <?php body_class(); ?>>
 <header class="site-header">
     <div class="container">
-        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Your Shelter</a></h1>
         <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
             <span></span>
             <span></span>
