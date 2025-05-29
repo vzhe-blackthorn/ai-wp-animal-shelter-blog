@@ -39,4 +39,23 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
+
+  const hash = window.location.hash;
+  if (hash) {
+    const target = document.querySelector(hash);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
+  // Smooth scroll for footer links
+  document.querySelectorAll(".footer-navigation a[href^='#']").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const target = document.querySelector(link.getAttribute("href"));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
 });
