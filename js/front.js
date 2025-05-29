@@ -23,7 +23,20 @@ document.addEventListener("DOMContentLoaded", function () {
   if (toggle && nav) {
     toggle.addEventListener("click", function () {
       const isOpen = nav.classList.toggle("open");
+      toggle.classList.toggle("open", isOpen);
       toggle.setAttribute("aria-expanded", isOpen);
+    });
+
+    nav.querySelectorAll("a[href^='#']").forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const target = document.querySelector(link.getAttribute("href"));
+        if (target) {
+          e.preventDefault();
+          nav.classList.remove("open");
+          toggle.classList.remove("open");
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      });
     });
   }
 });

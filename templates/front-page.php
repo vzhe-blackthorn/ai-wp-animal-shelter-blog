@@ -7,29 +7,33 @@ get_header();
 
 <section class="hero">
     <div class="hero-inner">
-        <h2>Welcome to Our Animal Shelter</h2>
+        <h1>Welcome to Our Animal Shelter</h1>
         <p>We provide care and find loving homes for animals in need.</p>
     </div>
 </section>
 
-<section class="offerings">
+<section id="offerings" class="offerings">
     <h2>What We Offer</h2>
     <div class="cards">
         <article class="card">
             <h3>Adoption</h3>
             <p>Find your perfect companion and give them a forever home.</p>
+            <a href="#" class="button"><span class="dashicons dashicons-paw"></span>Adopt</a>
         </article>
         <article class="card">
             <h3>Volunteer</h3>
             <p>Join our team to help care for animals at the shelter.</p>
+            <a href="#" class="button"><span class="dashicons dashicons-heart"></span>Join Us</a>
         </article>
         <article class="card">
             <h3>Donate</h3>
             <p>Your support helps us continue our mission.</p>
+            <a href="#" class="button"><span class="dashicons dashicons-money"></span>Donate</a>
         </article>
         <article class="card">
             <h3>Foster</h3>
             <p>Provide a temporary home for animals awaiting adoption.</p>
+            <a href="#" class="button"><span class="dashicons dashicons-admin-home"></span>Foster</a>
         </article>
     </div>
 </section>
@@ -54,17 +58,23 @@ get_header();
     </div>
 </section>
 
-<section class="contact-section">
+<section id="contact" class="contact-section">
     <h2>Contact Us</h2>
-    <div class="contact-container">
-        <div class="contact-form">
-            <?php echo do_shortcode('[contact-form-7 id="123" title="Contact form"]'); ?>
+    <div class="contact-card">
+        <div class="contact-container">
+            <div class="contact-form">
+                <?php echo do_shortcode('[contact-form-7 id="123" title="Contact form"]'); ?>
+            </div>
+            <div class="contact-info">
+                <p><span class="dashicons dashicons-location"></span>1234 Shelter Way City, ST 12345</p>
+                <p><span class="dashicons dashicons-email"></span>info@example.com</p>
+                <p><span class="dashicons dashicons-phone"></span>(555) 123-4567</p>
+            </div>
         </div>
-        <div class="contact-info">
-            <p><span class="dashicons dashicons-location"></span>1234 Shelter Way City, ST 12345</p>
-            <p><span class="dashicons dashicons-email"></span>info@example.com</p>
-            <p><span class="dashicons dashicons-phone"></span>(555) 123-4567</p>
+        <div class="contact-map">
+            <iframe src="https://maps.google.com/maps?q=New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
         </div>
+    </div>
 </section>
 
 <?php get_footer(); ?>

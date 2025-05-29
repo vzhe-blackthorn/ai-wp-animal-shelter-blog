@@ -26,9 +26,9 @@ add_action('widgets_init', 'ai_shelter_widgets_init');
 function ai_shelter_fallback_menu()
 {
     echo '<ul class="menu">';
-    echo '<li><a href="#">About Us</a></li>';
-    echo '<li><a href="#">Blog</a></li>';
-    echo '<li><a href="#">Contact Us</a></li>';
+    echo '<li><a href="#offerings"><span class="dashicons dashicons-info"></span> <span class="label">About</span></a></li>';
+    echo '<li><a href="#"><span class="dashicons dashicons-admin-post"></span> <span class="label">Blog</span></a></li>';
+    echo '<li><a href="#contact"><span class="dashicons dashicons-email"></span> <span class="label">Contact</span></a></li>';
     echo '</ul>';
 }
 
@@ -43,6 +43,9 @@ function ai_shelter_scripts()
 
     // WordPress dashicons for social icons
     wp_enqueue_style('dashicons');
+
+    // Google Fonts
+    wp_enqueue_style('ai-google-fonts', 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap', false);
 
     // Theme stylesheet.
     wp_enqueue_style('ai-shelter-style', get_stylesheet_uri(), array('swiper'), '1.0');
