@@ -27,11 +27,19 @@ function ai_shelter_fallback_menu()
 {
     echo '<ul class="menu">';
     echo '<li><a href="#offerings"><span class="dashicons dashicons-info"></span> <span class="label">About</span></a></li>';
-    echo '<li><a href="#"><span class="dashicons dashicons-admin-post"></span> <span class="label">Blog</span></a></li>';
+    echo '<li><a href="' . esc_url(home_url('/blog')) . '"><span class="dashicons dashicons-admin-post"></span> <span class="label">Blog</span></a></li>';
     echo '<li><a href="#contact"><span class="dashicons dashicons-email"></span> <span class="label">Contact</span></a></li>';
     echo '</ul>';
 }
 
+function ai_shelter_append_blog_link($items, $args)
+{
+    if ('primary' === $args->theme_location && strpos($items, '/blog') === false) {
+        $items .= '<li><a href="' . esc_url(home_url('/blog')) . '"><span class="dashicons dashicons-admin-post"></span> <span class="label">Blog</span></a></li>';
+    }
+    return $items;
+}
+add_filter('wp_nav_menu_items', 'ai_shelter_append_blog_link', 10, 2);
 /**
  * Enqueue theme scripts and styles.
  */
