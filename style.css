@@ -14,6 +14,10 @@ Version: 1.0
     --btn-secondary: #cccccc;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -108,6 +112,9 @@ h3 {
     transition: transform 0.3s ease;
 }
 .site-navigation a {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
     text-decoration: none;
     color: var(--primary-color);
 }

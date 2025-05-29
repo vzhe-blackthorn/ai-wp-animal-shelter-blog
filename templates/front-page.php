@@ -12,7 +12,7 @@ get_header();
     </div>
 </section>
 
-<section id="offerings" class="offerings">
+<section id="about" class="offerings">
     <h2>What We Offer</h2>
     <div class="cards">
         <article class="card">

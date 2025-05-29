@@ -25,10 +25,13 @@ add_action('widgets_init', 'ai_shelter_widgets_init');
  */
 function ai_shelter_fallback_menu()
 {
+    $about_link   = is_front_page() ? '#about' : esc_url(home_url('/#about'));
+    $contact_link = is_front_page() ? '#contact' : esc_url(home_url('/#contact'));
+
     echo '<ul class="menu">';
-    echo '<li><a href="#offerings"><span class="dashicons dashicons-info"></span> <span class="label">About</span></a></li>';
+    echo '<li><a href="' . $about_link . '"><span class="dashicons dashicons-info"></span> <span class="label">About</span></a></li>';
     echo '<li><a href="' . esc_url(home_url('/blog')) . '"><span class="dashicons dashicons-admin-post"></span> <span class="label">Blog</span></a></li>';
-    echo '<li><a href="#contact"><span class="dashicons dashicons-email"></span> <span class="label">Contact</span></a></li>';
+    echo '<li><a href="' . $contact_link . '"><span class="dashicons dashicons-email"></span> <span class="label">Contact</span></a></li>';
     echo '</ul>';
 }
 
@@ -40,6 +43,25 @@ function ai_shelter_append_blog_link($items, $args)
     return $items;
 }
 add_filter('wp_nav_menu_items', 'ai_shelter_append_blog_link', 10, 2);
+
+/**
+ * Adjust About and Contact links to point to the correct page.
+ */
+function ai_shelter_section_links($atts, $item, $args)
+{
+    if (!isset($atts['href'])) {
+        return $atts;
+    }
+
+    if (strpos($atts['href'], '#about') !== false) {
+        $atts['href'] = is_front_page() ? '#about' : esc_url(home_url('/#about'));
+    } elseif (strpos($atts['href'], '#contact') !== false) {
+        $atts['href'] = is_front_page() ? '#contact' : esc_url(home_url('/#contact'));
+    }
+
+    return $atts;
+}
+add_filter('nav_menu_link_attributes', 'ai_shelter_section_links', 10, 3);
 /**
  * Enqueue theme scripts and styles.
  */
