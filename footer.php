@@ -3,7 +3,7 @@
         <nav class="footer-navigation footer-section" role="navigation">
             <ul class="menu">
                 <li><a href="<?php echo esc_url( home_url('/blog') ); ?>"><span class="dashicons dashicons-admin-post"></span><span class="label">Blog</span></a></li>
-                <li><a href="#offerings"><span class="dashicons dashicons-info"></span><span class="label">About</span></a></li>
+                <li><a href="#about"><span class="dashicons dashicons-info"></span><span class="label">About</span></a></li>
                 <li><a href="#contact"><span class="dashicons dashicons-email-alt"></span><span class="label">Contact</span></a></li>
             </ul>
         </nav>

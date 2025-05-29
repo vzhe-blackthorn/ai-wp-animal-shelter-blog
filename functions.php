@@ -26,7 +26,7 @@ add_action('widgets_init', 'ai_shelter_widgets_init');
 function ai_shelter_fallback_menu()
 {
     echo '<ul class="menu">';
-    echo '<li><a href="#offerings"><span class="dashicons dashicons-info"></span> <span class="label">About</span></a></li>';
+    echo '<li><a href="#about"><span class="dashicons dashicons-info"></span> <span class="label">About</span></a></li>';
     echo '<li><a href="' . esc_url(home_url('/blog')) . '"><span class="dashicons dashicons-admin-post"></span> <span class="label">Blog</span></a></li>';
     echo '<li><a href="#contact"><span class="dashicons dashicons-email"></span> <span class="label">Contact</span></a></li>';
     echo '</ul>';
