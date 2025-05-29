@@ -27,6 +27,6 @@ jobs:
           mirror -R --only-newer \
             --exclude-glob .git/ --exclude-glob .github/ --exclude-glob .gitignore \
             --exclude-glob README.md --exclude-glob startup.sh \
-            ./ /themes/ai-wp-animal-shelter-blog/
+            ./ /ai-wp-animal-shelter-blog/
           quit
           DEPLOY
