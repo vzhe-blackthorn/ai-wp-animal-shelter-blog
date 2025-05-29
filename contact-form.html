@@ -1,0 +1,62 @@
+<div class="cf7-form-wrapper">
+    <p>
+        <label>Name<br />
+            [text* your-name placeholder "Your Name"]
+        </label>
+    </p>
+    <p>
+        <label>Email<br />
+            [email* your-email placeholder "Your Email"]
+        </label>
+    </p>
+    <p>
+        <label>Phone (optional)<br />
+            [tel your-phone placeholder "Phone"]
+        </label>
+    </p>
+    <p>
+        <label>Message<br />
+            [textarea* your-message placeholder "How can we help?"]
+        </label>
+    </p>
+    <p>[submit "Send Message"]</p>
+</div>
+<style>
+.cf7-form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    font-size: 1rem;
+}
+.cf7-form-wrapper p{
+margin:0;
+}
+.cf7-form-wrapper label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+.cf7-form-wrapper input,
+.cf7-form-wrapper textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+.cf7-form-wrapper textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+.cf7-form-wrapper input[type="submit"] {
+    background: var(--primary-color, #FB8500);
+    color: var(--bg-color, #FFF9F4);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.cf7-form-wrapper input[type="submit"]:hover {
+    background: var(--secondary-color, #383838);
+}
+</style>
