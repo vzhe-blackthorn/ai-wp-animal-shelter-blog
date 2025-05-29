@@ -23,7 +23,7 @@ body {
 /* Header navigation styles */
 .site-header {
     background: #ffffff;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 .site-header .container {
     display: flex;
@@ -33,11 +33,11 @@ body {
 }
 .site-title {
     margin: 0;
-    color: #FFF9F4;
+    color: var(--primary-color);
     font-size: 1.5rem;
 }
 .site-title a {
-    color: inherit;
+    color: var(--primary-color);
     text-decoration: none;
 }
 .site-navigation ul {
@@ -49,7 +49,7 @@ body {
 }
 .site-navigation a {
     text-decoration: none;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 .site-navigation.open {
     display: block;
@@ -76,6 +76,8 @@ body {
     padding: 4rem 1rem;
     color: var(--bg-color);
     border-radius: 8px;
+    margin: 2rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 .hero h2 {
     margin: 0 0 1rem;
@@ -89,8 +91,10 @@ body {
 /* Offerings cards */
 .offerings {
     padding: 2rem 1rem;
-    background: var(--bg-color);
+    background: #ffffff;
     border-radius: 8px;
+    margin: 2rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 .offerings .cards {
     display: grid;
@@ -108,16 +112,24 @@ body {
 /* Gallery slider */
 .gallery {
     padding: 2rem 1rem;
-    background: var(--bg-color);
+    background: #ffffff;
     border-radius: 8px;
+    margin: 2rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 .swiper-container {
     position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 .swiper-container img {
     width: 100%;
+    max-width: 100%;
     display: block;
     border-radius: 8px;
+    object-fit: contain;
 }
 .swiper-button-prev,
 .swiper-button-next {
@@ -129,17 +141,50 @@ body {
     background: var(--primary-color);
 }
 
-/* Contact section */
+@media (max-width: 600px) {
+    .swiper-container {
+        max-width: 350px;
+    }
+    .swiper-container img {
+        max-height: 200px;
+    }
+}
+
+@media (min-width: 601px) {
+    .swiper-container img {
+        max-height: 400px;
+    }
+}
+
 .contact-section {
     padding: 2rem 1rem;
-    background: var(--bg-color);
+    background: #ffffff;
     border-radius: 8px;
+    margin: 2rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.contact-container {
+    display: flex;
+    gap: 8rem;
+    max-width: 900px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
 }
 .contact-form {
     display: grid;
     gap: 0.5rem;
     max-width: 400px;
     margin-bottom: 1rem;
+}
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.contact-info .dashicons {
+    color: var(--primary-color);
+    font-size: 1.2rem;
 }
 .contact-form input,
 .contact-form textarea {
@@ -163,17 +208,53 @@ footer {
     background: var(--secondary-color);
     color: var(--bg-color);
     text-align: center;
-    padding: 1rem;
-    border-radius: 8px 8px 0 0;
+    padding: 2rem 1rem;
+}
+
+.footer-navigation ul {
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.footer-navigation a {
+    color: var(--bg-color);
+    text-decoration: none;
+}
+
+.social-links {
+    margin-bottom: 1rem;
+}
+.social-link {
+    display: inline-block;
+    padding: 0 0.5rem;
+    color: var(--bg-color);
+    font-size: 1.5rem;
+}
+.social-link .dashicons {
+    width: 24px;
+    height: 24px;
 }
 
 @media (max-width: 600px) {
+    .site-header .container {
+        position: relative;
+    }
     .menu-toggle {
         display: block;
     }
     .site-navigation {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
         width: 100%;
+        background: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
     }
     .site-navigation.open {
         display: block;
@@ -181,14 +262,18 @@ footer {
     .site-navigation ul {
         flex-direction: column;
         gap: 0;
-        padding: 1rem 0;
+        padding: 1rem;
     }
     .site-navigation a {
         display: block;
-        padding: 0.5rem 0;
+        padding: 0.5rem 1rem;
         color: var(--secondary-color);
     }
     .hero h2 {
         font-size: 2rem;
+    }
+    .contact-container {
+        flex-direction: column;
+        gap: 2rem;
     }
 }

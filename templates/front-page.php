@@ -38,9 +38,15 @@ get_header();
     <h2>Our Animals</h2>
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/image-slider-1.png" alt="Animal 1"></div>
-            <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/image-slider-2.png" alt="Animal 2"></div>
-            <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/image-slider-3.png" alt="Animal 3"></div>
+            <div class="swiper-slide"><img
+                    src="<?php echo get_template_directory_uri(); ?>/assets/images/image-slider-1.png" alt="Animal 1">
+            </div>
+            <div class="swiper-slide"><img
+                    src="<?php echo get_template_directory_uri(); ?>/assets/images/image-slider-2.png" alt="Animal 2">
+            </div>
+            <div class="swiper-slide"><img
+                    src="<?php echo get_template_directory_uri(); ?>/assets/images/image-slider-3.png" alt="Animal 3">
+            </div>
         </div>
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
@@ -50,13 +56,15 @@ get_header();
 
 <section class="contact-section">
     <h2>Contact Us</h2>
-    <div class="contact-form">
-        <?php echo do_shortcode('[contact-form-7 id="123" title="Contact form"]'); ?>
-    </div>
-    <div class="contact-info">
-        <p>1234 Shelter Way<br>City, ST 12345</p>
-        <p>Email: info@example.com<br>Phone: (555) 123-4567</p>
-    </div>
+    <div class="contact-container">
+        <div class="contact-form">
+            <?php echo do_shortcode('[contact-form-7 id="123" title="Contact form"]'); ?>
+        </div>
+        <div class="contact-info">
+            <p><span class="dashicons dashicons-location"></span>1234 Shelter Way City, ST 12345</p>
+            <p><span class="dashicons dashicons-email"></span>info@example.com</p>
+            <p><span class="dashicons dashicons-phone"></span>(555) 123-4567</p>
+        </div>
 </section>
 
 <?php get_footer(); ?>
