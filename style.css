@@ -402,3 +402,51 @@ footer {
     transform: translateY(-4px) scale(1.02);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
+/* Single post styles */
+.single-post-content {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.single-post-image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.single-post-meta {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.share-links {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.share-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 0 0.25rem;
+    border-radius: 50%;
+    background: var(--btn-primary);
+    color: var(--bg-color);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.share-link:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
