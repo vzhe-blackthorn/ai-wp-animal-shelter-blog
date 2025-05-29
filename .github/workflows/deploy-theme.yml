@@ -1,0 +1,32 @@
+name: Deploy Theme
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Deploy via SFTP
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_PORT: ${{ secrets.FTP_PORT }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" -p "$FTP_PORT" sftp://$FTP_HOST <<'DEPLOY'
+          set sftp:auto-confirm yes
+          mirror -R --only-newer \
+            --exclude-glob .git/ --exclude-glob .github/ --exclude-glob .gitignore \
+            --exclude-glob README.md --exclude-glob startup.sh \
+            ./ /themes/ai-wp-animal-shelter-blog/
+          quit
+          DEPLOY
